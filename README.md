@@ -1,6 +1,12 @@
 # vue-compiler-dom-cli
 
-	CLI to compile vue templates to render functions.
+## Install
+
+	npm i -g vue-compiler-dom-cli
+	
+## Usage
+
+	Compile vue templates to render functions.
 
 	Options:
 		--help                   Show help                                   [boolean]
