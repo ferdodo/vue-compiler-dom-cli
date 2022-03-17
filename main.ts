@@ -36,23 +36,26 @@ function getOptions(): Promise<Options> {
 	const args: string[] = hideBin(process.argv);
 
 	return <Promise<Options>> yargs(args)
-		.usage("Compile vue templates to render functions.")
+		.usage(
+			"$0 --infile <infile> --outfile <outfile>",
+			"Compile vue templates to render functions."
+		)
 		.options({
 			infile: {
-				description: "Template file to be compiled.",
+				description: "Template file to be compiled",
 				type: "string",
 				demandOption: true,
 				requiresArg: true
 			},
 			outfile: {
-				description: "Destination file.",
+				description: "Destination file",
 				type: "string",
 				demandOption: true,
 				requiresArg: true
 			},
 			'custom-element-regexp': {
 				type: "string",
-				description: "Regular expression to match custom elements."
+				description: "Regular expression to match custom elements"
 			}
 		})
 		.parse();
