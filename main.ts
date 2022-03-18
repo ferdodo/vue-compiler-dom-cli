@@ -10,7 +10,7 @@ export async function transpile () {
 	const outputStream: WriteStream = createWriteStream(options.outfile);
 	const template: string = await streamToString(inputStream);
 	const isCustomElement: CompilerOptions["isCustomElement"] = await isCustomElementFn(options);
-	const compilerOptions: CompilerOptions = { isCustomElement };
+	const compilerOptions: CompilerOptions = { isCustomElement, mode: options.mode};
 	const codeGen: CodegenResult = compile(template, compilerOptions);
 	const code: string = codeGen.code;
 	outputStream.write(code);
@@ -29,6 +29,7 @@ function isCustomElementFn (options: Options) : CompilerOptions["isCustomElement
 type Options = {
 	infile: string,
 	outfile: string,
+	mode: "function" | "module" | undefined,
 	customElementRegexp: string | undefined
 };
 
@@ -36,10 +37,7 @@ function getOptions(): Promise<Options> {
 	const args: string[] = hideBin(process.argv);
 
 	return <Promise<Options>> yargs(args)
-		.usage(
-			"$0 --infile <infile> --outfile <outfile>",
-			"Compile vue templates to render functions."
-		)
+		.usage("$0", "Compile vue templates to render functions.")
 		.options({
 			infile: {
 				description: "Template file to be compiled",
@@ -56,6 +54,12 @@ function getOptions(): Promise<Options> {
 			'custom-element-regexp': {
 				type: "string",
 				description: "Regular expression to match custom elements"
+			},
+			mode: {
+				type: "string",
+				choices: ["module", "function"],
+				default: "function",
+				description: "Generate an module exporting the render function or a simple function"
 			}
 		})
 		.parse();
