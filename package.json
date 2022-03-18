@@ -3,7 +3,7 @@
   "bin": {
     "vue-compiler-dom": "./bin/cli.js"
   },
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "CLI to compile vue templates to render functions.",
   "scripts": {
     "build": "tsc"
