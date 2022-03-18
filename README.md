@@ -6,16 +6,19 @@
 	
 ## Usage
 
-    vue-compiler-dom --infile <infile> --outfile <outfile>
+	vue-compiler-dom
 
-    Compile vue templates to render functions.
+	Compile vue templates to render functions.
 
-    Options:
-      --help                   Show help                                   [boolean]
-      --version                Show version number                         [boolean]
-      --infile                 Template file to be compiled      [string] [required]
-      --outfile                Destination file                  [string] [required]
-      --custom-element-regexp  Regular expression to match custom elements  [string]
+	Options:
+	  --help                   Show help                                   [boolean]
+	  --version                Show version number                         [boolean]
+	  --infile                 Template file to be compiled      [string] [required]
+	  --outfile                Destination file                  [string] [required]
+	  --custom-element-regexp  Regular expression to match custom elements  [string]
+	  --mode                   Generate an module exporting the render function or a
+	                           simple function
+	                  [string] [choices: "module", "function"] [default: "function"]
 
 
 
