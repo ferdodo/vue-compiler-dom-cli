@@ -2,6 +2,8 @@
 
 ## Install
 
+[npm package](https://www.npmjs.com/package/vue-compiler-dom-cli)
+
 	npm i -g vue-compiler-dom-cli
 	
 ## Usage
