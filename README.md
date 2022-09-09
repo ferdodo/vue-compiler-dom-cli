@@ -1,5 +1,7 @@
 # vue-compiler-dom-cli
 
+[![vulnerabilities badge](https://snyk.io/test/npm/vue-compiler-dom-cli/badge.svg)](https://snyk.io/test/npm/vue-compiler-dom-cli)
+
 ## Install
 
 [npm package](https://www.npmjs.com/package/vue-compiler-dom-cli)
