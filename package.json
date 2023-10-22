@@ -3,7 +3,7 @@
   "bin": {
     "vue-compiler-dom": "./bin/cli.js"
   },
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "CLI to compile vue templates to render functions.",
   "scripts": {
     "build": "tsc"
@@ -33,6 +33,6 @@
     "yargs": "^17.3.1"
   },
   "peerDependencies": {
-    "vue": "^3.2.37"
+    "vue": "^3.3.6"
   }
 }
